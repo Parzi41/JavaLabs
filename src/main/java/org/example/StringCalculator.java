@@ -6,7 +6,19 @@ public class StringCalculator {
             return 0;
         }
 
-        String[] numArray = numbers.split("[,\n]");
+        String delimiter = ",";
+        if (numbers.startsWith("//")) {
+            int delimiterEnd = numbers.indexOf("\n");
+            if (delimiterEnd != -1) {
+                delimiter = numbers.substring(2, delimiterEnd);
+                numbers = numbers.substring(delimiterEnd + 1);
+            } else {
+                throw new IllegalArgumentException("Incorrect data");
+            }
+        }
+
+
+        String[] numArray = numbers.split("[" + delimiter + "\n]");
         int sum = 0;
         for (String num : numArray) {
             if (!num.isEmpty()) {
