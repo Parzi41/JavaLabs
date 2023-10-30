@@ -32,7 +32,7 @@ public class StringCalculator {
                 parsedNum = Integer.parseInt(num);
                 if (parsedNum < 0) {
                     negativeNumbers.add(parsedNum);
-                } else {
+                } else if (parsedNum <= 1000) {
                     sum += parsedNum;
                 }
             } else {
