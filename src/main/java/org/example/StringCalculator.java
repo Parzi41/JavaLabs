@@ -6,10 +6,14 @@ public class StringCalculator {
             return 0;
         }
 
-        String[] numArray = numbers.split(",");
+        String[] numArray = numbers.split("[,\n]");
         int sum = 0;
         for (String num : numArray) {
-            sum += Integer.parseInt(num);
+            if (!num.isEmpty()) {
+                sum += Integer.parseInt(num);
+            } else {
+                throw new IllegalArgumentException("Incorrect data");
+            }
         }
 
         return sum;
