@@ -1,7 +1,11 @@
 package org.example;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static void main(String[] args)
+    {
+        StringCalculator calculator = new StringCalculator();
+        System.out.println(calculator.add(""));
+        System.out.println(calculator.add("1"));
+        System.out.println(calculator.add("1,2"));
     }
 }
