@@ -27,17 +27,14 @@ public class StringCalculator {
 
             numbers = numbers.substring(end + 1);
 
-            if(end != check) {
-                String[] delimiters = delimiter.split("(?<=\\G.{" + 1 + "})");
-                String delimiterPattern = "";
-                for (String d : delimiters) {
-                    delimiterPattern += Pattern.quote(d) + "|";
-                }
-                numArray = numbers.split(delimiterPattern + "\n");
+            String[] delimiters = delimiter.split("(?<=\\G.{" + 1 + "})");
+            StringBuilder delimiterPattern = new StringBuilder();
+            for (String d : delimiters) {
+                delimiterPattern.append(Pattern.quote(d)).append("|");
             }
-            else {
-                numArray = numbers.split(Pattern.quote(delimiter) + "|\n");
-            }
+            delimiterPattern.setLength(delimiterPattern.length() - 1);
+
+            numArray = numbers.split(delimiterPattern.toString() + "|\n");
         }
 
         else if (numbers.startsWith("//")) {
