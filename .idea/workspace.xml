@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Step 6 done">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Step 7 done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StringCalculator.java" afterDir="false" />
@@ -66,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698681765554</updated>
       <workItem from="1698681766617" duration="5828000" />
-      <workItem from="1698744877895" duration="166000" />
+      <workItem from="1698744877895" duration="3208000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -124,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698683998193</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Step 7 done">
+      <option name="closed" value="true" />
+      <created>1698745053814</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698745053814</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +156,7 @@
     <MESSAGE value="Step 4 done" />
     <MESSAGE value="Step 5 done" />
     <MESSAGE value="Step 6 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 6 done" />
+    <MESSAGE value="Step 7 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 7 done" />
   </component>
 </project>

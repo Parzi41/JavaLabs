@@ -12,29 +12,40 @@ public class StringCalculator {
         if (numbers.isEmpty()) {
             return 0;
         }
-        String delimiter = ",";
-        String newNumbers = "";
+        String delimiter = "";
         String[] numArray = null;
 
         if (numbers.startsWith("//[")) {
-            String temp = "";
-            int indexstart = numbers.indexOf("[")+1;
-            int indexstop = numbers.indexOf("]");
-            while (indexstart != indexstop)
-            {
-                temp += numbers.charAt(indexstart);
-                indexstart++;
+            Pattern pattern = Pattern.compile("\\[([^]]+)\\]");
+            int end = numbers.lastIndexOf("]");
+            int check = numbers.indexOf("]");
+
+            Matcher m = pattern.matcher(numbers);
+            while(m.find()) {
+                delimiter += m.group(1);
             }
-            newNumbers = numbers.substring(indexstop + 1);
-            delimiter = temp;
-            numArray = newNumbers.split(Pattern.quote(delimiter) + "|\n");
+
+            numbers = numbers.substring(end + 1);
+
+            if(end != check) {
+                String[] delimiters = delimiter.split("(?<=\\G.{" + 1 + "})");
+                String delimiterPattern = "";
+                for (String d : delimiters) {
+                    delimiterPattern += Pattern.quote(d) + "|";
+                }
+                numArray = numbers.split(delimiterPattern + "\n");
+            }
+            else {
+                numArray = numbers.split(Pattern.quote(delimiter) + "|\n");
+            }
         }
 
-        if (numbers.startsWith("//")) {
+        else if (numbers.startsWith("//")) {
             int delimiterEnd = numbers.indexOf("\n");
             if (delimiterEnd != -1) {
                 delimiter = numbers.substring(2, delimiterEnd);
                 numbers = numbers.substring(delimiterEnd + 1);
+                numArray = numbers.split("[" + delimiter +"\n]");
             } else {
                 System.out.println("Incorrect data");
                 return 0;
@@ -42,7 +53,7 @@ public class StringCalculator {
         }
 
         if(numArray == null){
-            numArray = numbers.split("[" + delimiter + "\n]");
+            numArray = numbers.split("[,\n]");
         }
         List<Integer> negativeNumbers = new ArrayList<>();
 

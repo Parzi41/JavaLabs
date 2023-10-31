@@ -14,5 +14,6 @@ public class Main {
         System.out.println(calculator.add("1,-2,3,-4"));
         System.out.println(calculator.add("1000,999,1001"));
         System.out.println(calculator.add("//[***]\n1***2***3"));
+        System.out.println(calculator.add("//[*][%]\n1*2%3"));
     }
 }
