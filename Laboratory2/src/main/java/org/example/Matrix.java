@@ -61,6 +61,13 @@ public class Matrix {
         return data[row][column];
     }
 
+    public void setElement(int row, int column, int value) {
+        if (row < 0 || row >= rows || column < 0 || column >= columns) {
+            throw new IllegalArgumentException("Wrong matrix cords");
+        }
+        data[row][column] = value;
+    }
+
     public void printMatrix() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
