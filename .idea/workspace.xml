@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Directory renamed">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Lab 2 step 3 Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,30 +53,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Parzi/ideaProjects/Labs/Lab1/Lab1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "jbr-17",
+    "last_opened_file_path": "C:/Users/Parzi/ideaProjects/Labs/Lab1/Lab1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/admin/IdeaProjects/JavaLabs/Laboratory2/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Parzi\ideaProjects\Labs\Lab1\Lab1" />
       <recent name="C:\Users\Parzi\ideaProjects\Labs\Lab1" />
       <recent name="C:\Users\Parzi\ideaProjects\Labs\Lab1\Labolatory1" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -92,6 +107,7 @@
       <workItem from="1698905961795" duration="6452000" />
       <workItem from="1698918181660" duration="1753000" />
       <workItem from="1698919958551" duration="39000" />
+      <workItem from="1698935565503" duration="2744000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -197,7 +213,63 @@
       <option name="project" value="LOCAL" />
       <updated>1698919644860</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Lab 2 step 1 Done">
+      <option name="closed" value="true" />
+      <created>1698936243970</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1698936243970</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Lab 2 step 2 Done">
+      <option name="closed" value="true" />
+      <created>1698936818521</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698936818521</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Lab 2 step 2 Done">
+      <option name="closed" value="true" />
+      <created>1698936874443</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1698936874443</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Lab 2 step 3 Done">
+      <option name="closed" value="true" />
+      <created>1698936888468</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1698936888468</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Lab 2 step 1 Done">
+      <option name="closed" value="true" />
+      <created>1698937596163</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1698937596163</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Lab 2 step 2 Done">
+      <option name="closed" value="true" />
+      <created>1698937676357</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1698937676357</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Lab 2 step 3 Done">
+      <option name="closed" value="true" />
+      <created>1698937706752</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1698937706752</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +300,9 @@
     <MESSAGE value="Added tests and fixed StringCalculator" />
     <MESSAGE value="Transferred to Laboratory1" />
     <MESSAGE value="Directory renamed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Directory renamed" />
+    <MESSAGE value="Lab 2 step 1 Done" />
+    <MESSAGE value="Lab 2 step 2 Done" />
+    <MESSAGE value="Lab 2 step 3 Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab 2 step 3 Done" />
   </component>
 </project>
