@@ -1,6 +1,5 @@
 package org.example;
 
-import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -18,7 +17,6 @@ public class StringCalculator {
         if (numbers.startsWith("//[")) {
             Pattern pattern = Pattern.compile("\\[([^]]+)\\]");
             int end = numbers.lastIndexOf("]");
-            int check = numbers.indexOf("]");
 
             Matcher m = pattern.matcher(numbers);
             while(m.find()) {
@@ -38,19 +36,23 @@ public class StringCalculator {
         }
 
         else if (numbers.startsWith("//")) {
-            int delimiterEnd = numbers.indexOf("\n");
-            if (delimiterEnd != -1) {
-                delimiter = numbers.substring(2, delimiterEnd);
-                numbers = numbers.substring(delimiterEnd + 1);
+            int delimiterEnd = numbers.lastIndexOf("/");
+            try{
+                delimiter = String.valueOf(numbers.charAt(delimiterEnd + 1));
+                numbers = numbers.substring(delimiterEnd + 2);
                 numArray = numbers.split("[" + delimiter +"\n]");
-            } else {
-                System.out.println("Incorrect data");
-                return 0;
+            } catch (StringIndexOutOfBoundsException err) {
+                throw new IllegalArgumentException("Incorrect data");
             }
         }
 
-        if(numArray == null){
-            numArray = numbers.split("[,\n]");
+        if(numArray == null) {
+            if(Character.isDigit(numbers.charAt(numbers.length()-1))) {
+                numArray = numbers.split("[,\n]");
+            }
+            else {
+                throw new IllegalArgumentException("Incorrect data");
+            }
         }
         List<Integer> negativeNumbers = new ArrayList<>();
 
@@ -70,8 +72,7 @@ public class StringCalculator {
         }
 
         if (!negativeNumbers.isEmpty()) {
-            System.out.println("Negative numbers: " + negativeNumbers);
-            return 0;
+            throw new IllegalArgumentException("Negative numbers: " + negativeNumbers);
         }
 
         return sum;
