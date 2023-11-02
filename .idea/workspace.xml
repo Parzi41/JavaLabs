@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Step 9 done">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/StringCalculatorTest.java" afterDir="false" />
+    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Directory renamed">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StringCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,23 +54,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Parzi/ideaProjects/Labs/Lab1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Parzi/ideaProjects/Labs/Lab1/Lab1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Parzi\ideaProjects\Labs\Lab1\Lab1" />
+      <recent name="C:\Users\Parzi\ideaProjects\Labs\Lab1" />
+      <recent name="C:\Users\Parzi\ideaProjects\Labs\Lab1\Labolatory1" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,7 +89,9 @@
       <updated>1698681765554</updated>
       <workItem from="1698681766617" duration="5828000" />
       <workItem from="1698744877895" duration="4476000" />
-      <workItem from="1698905961795" duration="3775000" />
+      <workItem from="1698905961795" duration="6452000" />
+      <workItem from="1698918181660" duration="1753000" />
+      <workItem from="1698919958551" duration="39000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -165,7 +173,31 @@
       <option name="project" value="LOCAL" />
       <updated>1698749424587</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added tests and fixed StringCalculator">
+      <option name="closed" value="true" />
+      <created>1698910632648</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698910632648</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Transferred to Laboratory1">
+      <option name="closed" value="true" />
+      <created>1698919582363</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698919582363</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Directory renamed">
+      <option name="closed" value="true" />
+      <created>1698919644860</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1698919644860</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +225,9 @@
     <MESSAGE value="Step 7 done" />
     <MESSAGE value="Step 8 done" />
     <MESSAGE value="Step 9 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 9 done" />
+    <MESSAGE value="Added tests and fixed StringCalculator" />
+    <MESSAGE value="Transferred to Laboratory1" />
+    <MESSAGE value="Directory renamed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Directory renamed" />
   </component>
 </project>
