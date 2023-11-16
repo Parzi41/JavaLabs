@@ -25,9 +25,6 @@ public class Matrix {
         this.data = new int[rows][columns];
 
         for (int i = 0; i < rows; i++) {
-            if (values[i].length != columns) {
-                throw new IllegalArgumentException("Matrix rows size is not equal");
-            }
             for (int j = 0; j < columns; j++) {
                 this.data[i][j] = values[i][j];
             }
@@ -61,6 +58,34 @@ public class Matrix {
         return data[row][column];
     }
 
+    public int[] getRow(int rowIndex) {
+        if (rowIndex < 0 || rowIndex >= rows) {
+            throw new IllegalArgumentException("Wrong row index");
+        }
+
+        int[] row = new int[columns];
+
+        for(int i = 0; i < columns; i++) {
+            row[i] = data[rowIndex][i];
+        }
+
+        return row;
+    }
+
+    public int[] getColumn(int columnIndex) {
+        if (columnIndex < 0 || columnIndex >= columns) {
+            throw new IllegalArgumentException("Wrong column index");
+        }
+
+        int[] column = new int[rows];
+
+        for(int i = 0; i < rows; i++) {
+            column[i] = data[i][columnIndex];
+        }
+
+        return column;
+    }
+
     public void setElement(int row, int column, int value) {
         if (row < 0 || row >= rows || column < 0 || column >= columns) {
             throw new IllegalArgumentException("Wrong matrix cords");
@@ -75,5 +100,6 @@ public class Matrix {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }

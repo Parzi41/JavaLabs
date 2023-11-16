@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Lab 2 step 2 Done">
+    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Lab 2 step 1 Done">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/Matrix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +44,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="e63a8a5868dad04f241bbe11ecf814b97599fb4b" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -108,7 +115,7 @@
       <workItem from="1698918181660" duration="1753000" />
       <workItem from="1698919958551" duration="39000" />
       <workItem from="1698935565503" duration="2744000" />
-      <workItem from="1698953237697" duration="233000" />
+      <workItem from="1698953237697" duration="213000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -278,15 +285,7 @@
       <option name="project" value="LOCAL" />
       <updated>1698953313674</updated>
     </task>
-    <task id="LOCAL-00022" summary="Lab 2 step 2 Done">
-      <option name="closed" value="true" />
-      <created>1698953465365</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1698953465365</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,9 +316,9 @@
     <MESSAGE value="Added tests and fixed StringCalculator" />
     <MESSAGE value="Transferred to Laboratory1" />
     <MESSAGE value="Directory renamed" />
+    <MESSAGE value="Lab 2 step 2 Done" />
     <MESSAGE value="Lab 2 step 3 Done" />
     <MESSAGE value="Lab 2 step 1 Done" />
-    <MESSAGE value="Lab 2 step 2 Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lab 2 step 2 Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab 2 step 1 Done" />
   </component>
 </project>

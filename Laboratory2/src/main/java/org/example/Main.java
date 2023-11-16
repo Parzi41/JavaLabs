@@ -15,5 +15,16 @@ public class Main {
 
         Matrix matrixCopy = new Matrix(matrixFromValues);
         matrixCopy.printMatrix();
+
+        int[] row = matrixFromValues.getRow(0);
+        for(int i = 0; i < row.length; i++) {
+            System.out.print(row[i]);
+        }
+        System.out.println();
+
+        int[] column = matrixFromValues.getColumn(1);
+        for(int i = 0; i < column.length; i++) {
+            System.out.println(column[i]);
+        }
     }
 }
