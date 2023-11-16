@@ -1,9 +1,30 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class Matrix {
     private int rows;
     private int columns;
     private int[][] data;
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Matrix otherMatrix = (Matrix) obj;
+        return Arrays.deepEquals(this.data, otherMatrix.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.deepHashCode(this.data);
+    }
 
     public Matrix(int rows, int columns) {
         if (rows <= 0 || columns <= 0) {
