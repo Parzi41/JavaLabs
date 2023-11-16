@@ -26,5 +26,10 @@ public class Main {
         for(int i = 0; i < column.length; i++) {
             System.out.println(column[i]);
         }
+
+        int[] size = matrixFromValues.getSize();
+        for(int i = 0; i < size.length; i++) {
+            System.out.print(size[i] + " ");
+        }
     }
 }

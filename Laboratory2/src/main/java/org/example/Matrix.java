@@ -51,6 +51,14 @@ public class Matrix {
         return columns;
     }
 
+    public int[] getSize() {
+        int[] size = new int[2];
+        size[0] = rows;
+        size[1] = columns;
+
+        return size;
+    }
+
     public int getElement(int row, int column) {
         if (row < 0 || row >= rows || column < 0 || column >= columns) {
             throw new IllegalArgumentException("Wrong matrix cords");
