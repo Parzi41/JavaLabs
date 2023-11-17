@@ -90,6 +90,24 @@ public class Matrix {
         return new Matrix(resultData);
     }
 
+    public Matrix multiply(Matrix other) {
+        if (other == null || this.columns != other.rows) {
+            throw new IllegalArgumentException("Incorrect matrix sizes");
+        }
+
+        int[][] resultData = new int[this.rows][other.columns];
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < other.columns; j++) {
+                for (int k = 0; k < this.columns; k++) {
+                    resultData[i][j] += this.data[i][k] * other.data[k][j];
+                }
+            }
+        }
+
+        return new Matrix(resultData);
+    }
+
+
     public int getRows() {
         return rows;
     }

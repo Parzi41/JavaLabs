@@ -45,7 +45,7 @@ public final class ImutableMatrix {
 
     public ImutableMatrix add(ImutableMatrix other) {
         if (other == null || this.rows != other.rows || this.columns != other.columns) {
-            throw new IllegalArgumentException("Неможливо додати матриці різних розмірів.");
+            throw new IllegalArgumentException("You cant add matrix's with different size");
         }
 
         int[][] resultData = new int[rows][columns];
@@ -63,6 +63,23 @@ public final class ImutableMatrix {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 resultData[i][j] = this.data[i][j] * scalar;
+            }
+        }
+
+        return new ImutableMatrix(resultData);
+    }
+
+    public ImutableMatrix multiply(ImutableMatrix other) {
+        if (other == null || this.columns != other.rows) {
+            throw new IllegalArgumentException("You cant multiply matrix's with different size");
+        }
+
+        int[][] resultData = new int[this.rows][other.columns];
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < other.columns; j++) {
+                for (int k = 0; k < this.columns; k++) {
+                    resultData[i][j] += this.data[i][k] * other.data[k][j];
+                }
             }
         }
 

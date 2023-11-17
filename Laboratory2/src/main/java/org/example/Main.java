@@ -69,6 +69,13 @@ public class Main {
         Matrix scaledMatrix = matrixFromValues.multiplyByScalar(3);
         System.out.println("Multiplied by scalar matrix: ");
         scaledMatrix.printMatrix();
-        //---------------------------------------------------------
+        //-------------------------------------------------------
+
+        //-----------------------------------------------------
+        //Multiply two matrix's
+        Matrix productMatrix = matrixFromValues.multiply(matrixCopy);
+        System.out.println("Multiplied matrix's:");
+        productMatrix.printMatrix();
+        //-----------------------------------------------------------
     }
 }
