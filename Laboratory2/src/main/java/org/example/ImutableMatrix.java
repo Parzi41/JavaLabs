@@ -86,6 +86,16 @@ public final class ImutableMatrix {
         return new ImutableMatrix(resultData);
     }
 
+    public ImutableMatrix transpose() {
+        int[][] transposedData = new int[columns][rows];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                transposedData[j][i] = this.data[i][j];
+            }
+        }
+        return new ImutableMatrix(transposedData);
+    }
+
     public int getRows() {
         return rows;
     }

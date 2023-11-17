@@ -77,5 +77,12 @@ public class Main {
         System.out.println("Multiplied matrix's:");
         productMatrix.printMatrix();
         //-----------------------------------------------------------
+
+        //------------------------------------------------------
+        //Transposed matrix
+        Matrix transposedMatrix = matrixFromValues.transpose();
+        System.out.println("Transposed matrix:");
+        transposedMatrix.printMatrix();
+        //------------------------------------------------------
     }
 }
