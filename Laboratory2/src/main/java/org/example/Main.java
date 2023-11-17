@@ -93,5 +93,14 @@ public class Main {
         System.out.println("Diagonal matrix:");
         diagonalMatrix.printMatrix();
         //-------------------------------------------------------
+
+        //------------------------------------------------------
+        //Identity matrix
+        int sizeIdentity = 3;
+        Matrix identityMatrix = Matrix.identityMatrix(sizeIdentity);
+
+        System.out.println("Identity matrix:");
+        identityMatrix.printMatrix();
+        //------------------------------------------------------
     }
 }

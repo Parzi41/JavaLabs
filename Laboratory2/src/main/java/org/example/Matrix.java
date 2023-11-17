@@ -126,6 +126,14 @@ public class Matrix {
         return new Matrix(diagonalData);
     }
 
+    public static Matrix identityMatrix(int size) {
+        int[][] identityData = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            identityData[i][i] = 1;
+        }
+        return new Matrix(identityData);
+    }
+
     public int getRows() {
         return rows;
     }

@@ -105,6 +105,14 @@ public final class ImutableMatrix {
         return new ImutableMatrix(diagonalData);
     }
 
+    public static ImutableMatrix identityMatrix(int size) {
+        int[][] identityData = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            identityData[i][i] = 1;
+        }
+        return new ImutableMatrix(identityData);
+    }
+
     public int getRows() {
         return rows;
     }
