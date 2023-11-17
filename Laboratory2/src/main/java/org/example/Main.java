@@ -84,5 +84,14 @@ public class Main {
         System.out.println("Transposed matrix:");
         transposedMatrix.printMatrix();
         //------------------------------------------------------
+
+        //------------------------------------------------------
+        //Diagonal matrix
+        int[] diagonalVector = {2, 4, 6};
+        Matrix diagonalMatrix = Matrix.diagonalMatrix(diagonalVector);
+
+        System.out.println("Diagonal matrix:");
+        diagonalMatrix.printMatrix();
+        //-------------------------------------------------------
     }
 }

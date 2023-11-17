@@ -96,6 +96,15 @@ public final class ImutableMatrix {
         return new ImutableMatrix(transposedData);
     }
 
+    public static ImutableMatrix diagonalMatrix(int[] vector) {
+        int size = vector.length;
+        int[][] diagonalData = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            diagonalData[i][i] = vector[i];
+        }
+        return new ImutableMatrix(diagonalData);
+    }
+
     public int getRows() {
         return rows;
     }

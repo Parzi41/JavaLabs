@@ -117,6 +117,15 @@ public class Matrix {
         return new Matrix(transposedData);
     }
 
+    public static Matrix diagonalMatrix(int[] vector) {
+        int size = vector.length;
+        int[][] diagonalData = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            diagonalData[i][i] = vector[i];
+        }
+        return new Matrix(diagonalData);
+    }
+
     public int getRows() {
         return rows;
     }
