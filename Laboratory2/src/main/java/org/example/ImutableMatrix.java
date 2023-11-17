@@ -6,7 +6,7 @@ import java.util.Random;
 public final class ImutableMatrix {
     private final int rows;
     private final int columns;
-    private final int[][] data;
+    private final double[][] data;
 
     public ImutableMatrix(int rows, int columns) {
         if (rows <= 0 || columns <= 0) {
@@ -15,17 +15,17 @@ public final class ImutableMatrix {
 
         this.rows = rows;
         this.columns = columns;
-        this.data = new int[rows][columns];
+        this.data = new double[rows][columns];
     }
 
-    public ImutableMatrix(int[][] values) {
+    public ImutableMatrix(double[][] values) {
         if (values == null || values.length == 0 || values[0].length == 0) {
             throw new IllegalArgumentException("Incorrect data");
         }
 
         this.rows = values.length;
         this.columns = values[0].length;
-        this.data = new int[rows][columns];
+        this.data = new double[rows][columns];
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -37,7 +37,7 @@ public final class ImutableMatrix {
     public ImutableMatrix(ImutableMatrix other) {
         this.rows = other.getRows();
         this.columns = other.getColumns();
-        this.data = new int[rows][columns];
+        this.data = new double[rows][columns];
 
         for (int i = 0; i < rows; i++) {
             System.arraycopy(other.data[i], 0, this.data[i], 0, columns);
@@ -49,7 +49,7 @@ public final class ImutableMatrix {
             throw new IllegalArgumentException("You cant add matrix's with different size");
         }
 
-        int[][] resultData = new int[rows][columns];
+        double[][] resultData = new double[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 resultData[i][j] = this.data[i][j] + other.data[i][j];
@@ -60,7 +60,7 @@ public final class ImutableMatrix {
     }
 
     public ImutableMatrix multiplyByScalar(int scalar) {
-        int[][] resultData = new int[rows][columns];
+        double[][] resultData = new double[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 resultData[i][j] = this.data[i][j] * scalar;
@@ -75,7 +75,7 @@ public final class ImutableMatrix {
             throw new IllegalArgumentException("You cant multiply matrix's with different size");
         }
 
-        int[][] resultData = new int[this.rows][other.columns];
+        double[][] resultData = new double[this.rows][other.columns];
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < other.columns; j++) {
                 for (int k = 0; k < this.columns; k++) {
@@ -88,7 +88,7 @@ public final class ImutableMatrix {
     }
 
     public ImutableMatrix transpose() {
-        int[][] transposedData = new int[columns][rows];
+        double[][] transposedData = new double[columns][rows];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 transposedData[j][i] = this.data[i][j];
@@ -99,7 +99,7 @@ public final class ImutableMatrix {
 
     public static ImutableMatrix diagonalMatrix(int[] vector) {
         int size = vector.length;
-        int[][] diagonalData = new int[size][size];
+        double[][] diagonalData = new double[size][size];
         for (int i = 0; i < size; i++) {
             diagonalData[i][i] = vector[i];
         }
@@ -107,7 +107,7 @@ public final class ImutableMatrix {
     }
 
     public static ImutableMatrix identityMatrix(int size) {
-        int[][] identityData = new int[size][size];
+        double[][] identityData = new double[size][size];
         for (int i = 0; i < size; i++) {
             identityData[i][i] = 1;
         }
@@ -116,7 +116,7 @@ public final class ImutableMatrix {
 
     public static ImutableMatrix randomRowMatrix(int columns, int maxValue) {
         Random random = new Random();
-        int[][] rowData = new int[1][columns];
+        double[][] rowData = new double[1][columns];
 
         for (int j = 0; j < columns; j++) {
             rowData[0][j] = random.nextInt(maxValue + 1);
@@ -127,13 +127,163 @@ public final class ImutableMatrix {
 
     public static ImutableMatrix randomColumnMatrix(int rows, int maxValue) {
         Random random = new Random();
-        int[][] columnData = new int[rows][1];
+        double[][] columnData = new double[rows][1];
 
         for (int i = 0; i < rows; i++) {
             columnData[i][0] = random.nextInt(maxValue + 1);
         }
 
         return new ImutableMatrix(columnData);
+    }
+
+    public ImutableMatrix toTriangularForm() {
+        double[][] triangularData = new double[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            System.arraycopy(this.data[i], 0, triangularData[i], 0, columns);
+        }
+
+        int minDim = Math.min(rows, columns);
+
+        // Елементарні перетворення над рядками
+        for (int k = 0; k < minDim; k++) {
+            // Зробимо елемент triangularData[k][k] ненульовим
+            if (triangularData[k][k] == 0) {
+                int nonZeroRow = findNonZeroRow(triangularData, k, k);
+                if (nonZeroRow == -1) {
+                    // Матриця вже є в трикутному вигляді
+                    break;
+                }
+                swapRows(triangularData, k, nonZeroRow);
+            }
+
+            // Зробимо нульовими елементи подальших рядків у цьому стовпці
+            for (int i = k + 1; i < rows; i++) {
+                double factor = triangularData[i][k] / triangularData[k][k];
+                for (int j = k; j < columns; j++) {
+                    triangularData[i][j] -= factor * triangularData[k][j];
+                }
+            }
+        }
+
+        return new ImutableMatrix(triangularData);
+    }
+
+    public ImutableMatrix toLowerTriangularForm() {
+        double[][] lowerTriangularData = new double[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            System.arraycopy(this.data[i], 0, lowerTriangularData[i], 0, columns);
+        }
+
+        int minDim = Math.min(rows, columns);
+
+        // Елементарні перетворення над стовпцями
+        for (int k = 0; k < minDim; k++) {
+            // Зробимо елемент lowerTriangularData[k][k] ненульовим
+            if (lowerTriangularData[k][k] == 0) {
+                int nonZeroColumn = findNonZeroColumn(lowerTriangularData, k, k);
+                if (nonZeroColumn == -1) {
+                    // Матриця вже є в нижньотрикутному вигляді
+                    break;
+                }
+                swapColumns(lowerTriangularData, k, nonZeroColumn);
+            }
+
+            // Зробимо нульовими елементи подальших стовпців у цьому рядку
+            for (int j = k + 1; j < columns; j++) {
+                double factor = lowerTriangularData[k][j] / lowerTriangularData[k][k];
+                for (int i = k; i < rows; i++) {
+                    lowerTriangularData[i][j] -= factor * lowerTriangularData[i][k];
+                }
+            }
+        }
+
+        return new ImutableMatrix(lowerTriangularData);
+    }
+
+    private int findNonZeroColumn(double[][] matrix, int row, int startColumn) {
+        for (int j = startColumn + 1; j < columns; j++) {
+            if (matrix[row][j] != 0) {
+                return j;
+            }
+        }
+        return -1;
+    }
+
+    private void swapColumns(double[][] matrix, int col1, int col2) {
+        for (int i = 0; i < rows; i++) {
+            double temp = matrix[i][col1];
+            matrix[i][col1] = matrix[i][col2];
+            matrix[i][col2] = temp;
+        }
+    }
+
+    private int findNonZeroRow(double[][] matrix, int startRow, int column) {
+        for (int i = startRow + 1; i < rows; i++) {
+            if (matrix[i][column] != 0) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private void swapRows(double[][] matrix, int row1, int row2) {
+        double[] temp = matrix[row1];
+        matrix[row1] = matrix[row2];
+        matrix[row2] = temp;
+    }
+
+    public ImutableMatrix inverse() {
+        if (rows != columns) {
+            throw new UnsupportedOperationException("Matrix must be squared");
+        }
+
+
+        double[][] augmentedMatrixData = new double[rows][2 * columns];
+
+        for (int i = 0; i < rows; i++) {
+            System.arraycopy(this.data[i], 0, augmentedMatrixData[i], 0, columns);
+            augmentedMatrixData[i][columns + i] = 1;
+        }
+
+        for (int k = 0; k < rows; k++) {
+            if (augmentedMatrixData[k][k] == 0) {
+                int nonZeroRow = -1;
+                for (int i = k + 1; i < rows; i++) {
+                    if (augmentedMatrixData[i][k] != 0) {
+                        nonZeroRow = i;
+                        break;
+                    }
+                }
+
+                if (nonZeroRow == -1) {
+                    throw new UnsupportedOperationException("The determinant is 0, the matrix is not invertible");
+                }
+                double[] temp = augmentedMatrixData[k];
+                augmentedMatrixData[k] = augmentedMatrixData[nonZeroRow];
+                augmentedMatrixData[k] = temp;
+            }
+
+            double pivot = augmentedMatrixData[k][k];
+            for (int j = 0; j < 2 * columns; j++) {
+                augmentedMatrixData[k][j] /= pivot;
+            }
+
+            for (int i = 0; i < rows; i++) {
+                if (i != k) {
+                    double factor = augmentedMatrixData[i][k];
+                    for (int j = 0; j < 2 * columns; j++) {
+                        augmentedMatrixData[i][j] -= factor * augmentedMatrixData[k][j];
+                    }
+                }
+            }
+        }
+
+        double[][] inverseMatrixData = new double[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            System.arraycopy(augmentedMatrixData[i], columns, inverseMatrixData[i], 0, columns);
+        }
+
+        return new ImutableMatrix(inverseMatrixData);
     }
 
     public int getRows() {
@@ -151,14 +301,14 @@ public final class ImutableMatrix {
         return size;
     }
 
-    public int getElement(int row, int column) {
+    public double getElement(int row, int column) {
         if (row < 0 || row >= rows || column < 0 || column >= columns) {
             throw new IllegalArgumentException("Wrong matrix cords");
         }
         return data[row][column];
     }
 
-    public int[] getRow(int rowIndex) {
+    public double[] getRow(int rowIndex) {
         if (rowIndex < 0 || rowIndex >= rows) {
             throw new IllegalArgumentException("Wrong row index");
         }
@@ -166,12 +316,12 @@ public final class ImutableMatrix {
         return Arrays.copyOf(data[rowIndex], columns);
     }
 
-    public int[] getColumn(int columnIndex) {
+    public double[] getColumn(int columnIndex) {
         if (columnIndex < 0 || columnIndex >= columns) {
             throw new IllegalArgumentException("Wrong column index");
         }
 
-        int[] column = new int[rows];
+        double[] column = new double[rows];
         for (int i = 0; i < rows; i++) {
             column[i] = data[i][columnIndex];
         }

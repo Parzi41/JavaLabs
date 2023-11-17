@@ -9,9 +9,9 @@ public class Main {
         emptyMatrix.printMatrix();
 
         //Matrix from values
-        int[][] values = {
+        double[][] values = {
                 {1, 2, 3},
-                {4, 5, 6},
+                {4, 4, 6},
                 {7, 8, 9}
         };
         Matrix matrixFromValues = new Matrix(values);
@@ -23,13 +23,13 @@ public class Main {
 
         //-----------------------------------------------
         //Get row and column
-        int[] row = matrixFromValues.getRow(0);
+        double[] row = matrixFromValues.getRow(0);
         for(int i = 0; i < row.length; i++) {
             System.out.print(row[i]);
         }
         System.out.println();
 
-        int[] column = matrixFromValues.getColumn(1);
+        double[] column = matrixFromValues.getColumn(1);
         for(int i = 0; i < column.length; i++) {
             System.out.println(column[i]);
         }
@@ -135,6 +135,14 @@ public class Main {
 
         System.out.println("Upper triangular:");
         upperTriangularMatrix.printMatrix();
+        //---------------------------------------------------------
+
+        //---------------------------------------------------------
+        //Inverse matrix
+        Matrix inverseMatrix = matrixFromValues.inverse();
+
+        System.out.println("Inverse matrix:");
+        inverseMatrix.printMatrix();
         //---------------------------------------------------------
 
     }
