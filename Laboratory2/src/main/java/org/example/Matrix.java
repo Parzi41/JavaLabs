@@ -64,6 +64,32 @@ public class Matrix {
         }
     }
 
+    public Matrix add(Matrix other) {
+        if (other == null || this.rows != other.rows || this.columns != other.columns) {
+            throw new IllegalArgumentException("You cant add matrix with different size");
+        }
+
+        int[][] resultData = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                resultData[i][j] = this.data[i][j] + other.data[i][j];
+            }
+        }
+
+        return new Matrix(resultData);
+    }
+
+    public Matrix multiplyByScalar(int scalar) {
+        int[][] resultData = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                resultData[i][j] = this.data[i][j] * scalar;
+            }
+        }
+
+        return new Matrix(resultData);
+    }
+
     public int getRows() {
         return rows;
     }

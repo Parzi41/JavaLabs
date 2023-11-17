@@ -43,6 +43,32 @@ public final class ImutableMatrix {
         }
     }
 
+    public ImutableMatrix add(ImutableMatrix other) {
+        if (other == null || this.rows != other.rows || this.columns != other.columns) {
+            throw new IllegalArgumentException("Неможливо додати матриці різних розмірів.");
+        }
+
+        int[][] resultData = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                resultData[i][j] = this.data[i][j] + other.data[i][j];
+            }
+        }
+
+        return new ImutableMatrix(resultData);
+    }
+
+    public ImutableMatrix multiplyByScalar(int scalar) {
+        int[][] resultData = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                resultData[i][j] = this.data[i][j] * scalar;
+            }
+        }
+
+        return new ImutableMatrix(resultData);
+    }
+
     public int getRows() {
         return rows;
     }
