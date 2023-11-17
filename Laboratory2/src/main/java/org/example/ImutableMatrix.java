@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public final class ImutableMatrix {
     private final int rows;
@@ -111,6 +112,17 @@ public final class ImutableMatrix {
             identityData[i][i] = 1;
         }
         return new ImutableMatrix(identityData);
+    }
+
+    public static ImutableMatrix randomRowMatrix(int columns, int maxValue) {
+        Random random = new Random();
+        int[][] rowData = new int[1][columns];
+
+        for (int j = 0; j < columns; j++) {
+            rowData[0][j] = random.nextInt(maxValue + 1);
+        }
+
+        return new ImutableMatrix(rowData);
     }
 
     public int getRows() {

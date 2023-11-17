@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Matrix {
     private int rows;
@@ -132,6 +133,17 @@ public class Matrix {
             identityData[i][i] = 1;
         }
         return new Matrix(identityData);
+    }
+
+    public static Matrix randomRowMatrix(int columns, int maxValue) {
+        Random random = new Random();
+        int[][] rowData = new int[1][columns];
+
+        for (int j = 0; j < columns; j++) {
+            rowData[0][j] = random.nextInt(maxValue + 1);
+        }
+
+        return new Matrix(rowData);
     }
 
     public int getRows() {

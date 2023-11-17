@@ -102,5 +102,15 @@ public class Main {
         System.out.println("Identity matrix:");
         identityMatrix.printMatrix();
         //------------------------------------------------------
+
+        //------------------------------------------------------
+        //Row matrix
+        int columns = 5;
+        int maxValue = 10;
+        Matrix randomRowMatrix = Matrix.randomRowMatrix(columns, maxValue);
+
+        System.out.println("Row matrix with random values:");
+        randomRowMatrix.printMatrix();
+        //------------------------------------------------------
     }
 }
