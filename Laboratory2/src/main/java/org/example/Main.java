@@ -122,5 +122,20 @@ public class Main {
         System.out.println("Column matrix with random values:");
         randomColumnMatrix.printMatrix();
         //------------------------------------------------------
+
+        //-------------------------------------------------------
+        //Lower and upper triangular matrix's
+        Matrix lowerTriangularMatrix = matrixFromValues.toLowerTriangularForm();
+
+        System.out.println("Lower triangular:");
+        lowerTriangularMatrix.printMatrix();
+
+        //Upper triangular
+        Matrix upperTriangularMatrix = matrixFromValues.toTriangularForm();
+
+        System.out.println("Upper triangular:");
+        upperTriangularMatrix.printMatrix();
+        //---------------------------------------------------------
+
     }
 }

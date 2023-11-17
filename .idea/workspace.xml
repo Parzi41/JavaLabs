@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Lab 2 step 13 Done">
+    <list default="true" id="372d3cc4-2114-4b4c-a0d1-af7479ca3677" name="Changes" comment="Lab 2 step 14 Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/ImutableMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/ImutableMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory2/src/main/java/org/example/Matrix.java" afterDir="false" />
     </list>
@@ -117,7 +116,7 @@
       <workItem from="1698919958551" duration="39000" />
       <workItem from="1698935565503" duration="2744000" />
       <workItem from="1698953237697" duration="213000" />
-      <workItem from="1700228312358" duration="5746000" />
+      <workItem from="1700228312358" duration="9470000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -367,7 +366,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700233911074</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Lab 2 step 14 Done">
+      <option name="closed" value="true" />
+      <created>1700234192851</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1700234192851</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +392,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created class StringCalculator and finished step 1" />
     <MESSAGE value="Step 2 done" />
     <MESSAGE value="Step 3 done" />
     <MESSAGE value="Step 4 done" />
@@ -410,6 +416,7 @@
     <MESSAGE value="Lab 2 step 11 Done" />
     <MESSAGE value="Lab 2 step 12 Done" />
     <MESSAGE value="Lab 2 step 13 Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lab 2 step 13 Done" />
+    <MESSAGE value="Lab 2 step 14 Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab 2 step 14 Done" />
   </component>
 </project>

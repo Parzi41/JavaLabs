@@ -157,6 +157,102 @@ public class Matrix {
         return new Matrix(columnData);
     }
 
+    public Matrix toTriangularForm() {
+        int[][] triangularData = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            System.arraycopy(this.data[i], 0, triangularData[i], 0, columns);
+        }
+
+        int minDim = Math.min(rows, columns);
+
+        // Елементарні перетворення над рядками
+        for (int k = 0; k < minDim; k++) {
+            // Зробимо елемент triangularData[k][k] ненульовим
+            if (triangularData[k][k] == 0) {
+                int nonZeroRow = findNonZeroRow(triangularData, k, k);
+                if (nonZeroRow == -1) {
+                    // Матриця вже є в трикутному вигляді
+                    break;
+                }
+                swapRows(triangularData, k, nonZeroRow);
+            }
+
+            // Зробимо нульовими елементи подальших рядків у цьому стовпці
+            for (int i = k + 1; i < rows; i++) {
+                int factor = triangularData[i][k] / triangularData[k][k];
+                for (int j = k; j < columns; j++) {
+                    triangularData[i][j] -= factor * triangularData[k][j];
+                }
+            }
+        }
+
+        return new Matrix(triangularData);
+    }
+
+    public Matrix toLowerTriangularForm() {
+        int[][] lowerTriangularData = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            System.arraycopy(this.data[i], 0, lowerTriangularData[i], 0, columns);
+        }
+
+        int minDim = Math.min(rows, columns);
+
+        // Елементарні перетворення над стовпцями
+        for (int k = 0; k < minDim; k++) {
+            // Зробимо елемент lowerTriangularData[k][k] ненульовим
+            if (lowerTriangularData[k][k] == 0) {
+                int nonZeroColumn = findNonZeroColumn(lowerTriangularData, k, k);
+                if (nonZeroColumn == -1) {
+                    // Матриця вже є в нижньотрикутному вигляді
+                    break;
+                }
+                swapColumns(lowerTriangularData, k, nonZeroColumn);
+            }
+
+            // Зробимо нульовими елементи подальших стовпців у цьому рядку
+            for (int j = k + 1; j < columns; j++) {
+                int factor = lowerTriangularData[k][j] / lowerTriangularData[k][k];
+                for (int i = k; i < rows; i++) {
+                    lowerTriangularData[i][j] -= factor * lowerTriangularData[i][k];
+                }
+            }
+        }
+
+        return new Matrix(lowerTriangularData);
+    }
+
+    private int findNonZeroColumn(int[][] matrix, int row, int startColumn) {
+        for (int j = startColumn + 1; j < columns; j++) {
+            if (matrix[row][j] != 0) {
+                return j;
+            }
+        }
+        return -1; // Не знайдено ненульового стовпця
+    }
+
+    private void swapColumns(int[][] matrix, int col1, int col2) {
+        for (int i = 0; i < rows; i++) {
+            int temp = matrix[i][col1];
+            matrix[i][col1] = matrix[i][col2];
+            matrix[i][col2] = temp;
+        }
+    }
+
+    private int findNonZeroRow(int[][] matrix, int startRow, int column) {
+        for (int i = startRow + 1; i < rows; i++) {
+            if (matrix[i][column] != 0) {
+                return i;
+            }
+        }
+        return -1; // Не знайдено ненульового рядка
+    }
+
+    private void swapRows(int[][] matrix, int row1, int row2) {
+        int[] temp = matrix[row1];
+        matrix[row1] = matrix[row2];
+        matrix[row2] = temp;
+    }
+
     public int getRows() {
         return rows;
     }
