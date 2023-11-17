@@ -125,6 +125,17 @@ public final class ImutableMatrix {
         return new ImutableMatrix(rowData);
     }
 
+    public static ImutableMatrix randomColumnMatrix(int rows, int maxValue) {
+        Random random = new Random();
+        int[][] columnData = new int[rows][1];
+
+        for (int i = 0; i < rows; i++) {
+            columnData[i][0] = random.nextInt(maxValue + 1);
+        }
+
+        return new ImutableMatrix(columnData);
+    }
+
     public int getRows() {
         return rows;
     }

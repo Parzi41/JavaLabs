@@ -112,5 +112,15 @@ public class Main {
         System.out.println("Row matrix with random values:");
         randomRowMatrix.printMatrix();
         //------------------------------------------------------
+
+        //------------------------------------------------------
+        //Column matrix
+        int rows = 5;
+        maxValue = 10;
+        Matrix randomColumnMatrix = Matrix.randomColumnMatrix(rows, maxValue);
+
+        System.out.println("Column matrix with random values:");
+        randomColumnMatrix.printMatrix();
+        //------------------------------------------------------
     }
 }
